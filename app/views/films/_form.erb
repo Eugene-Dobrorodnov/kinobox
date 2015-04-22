@@ -1,0 +1,51 @@
+<%= form_for @film, :html => {:class => "form-horizontal"} do |f| %>
+
+    <div class="form-group <%= @film.errors[:title].empty? ? '' : 'has-error' %> ">
+      <%= f.label :title, :class => "control-label col-sm-1" %>
+      <div class="col-sm-4">
+        <%= f.text_field :title, :class => "form-control" %>
+        <span class="help-block">
+          <% @film.errors[:title].each do |err| %>
+            <%= err %>
+          <% end %>
+        </span>
+      </div>
+    </div>
+
+    <div class="form-group <%= @film.errors[:year].empty? ? '' : 'has-error' %> ">
+      <%= f.label :year, :class => "control-label col-sm-1" %>
+      <div class="col-sm-2">
+        <%= f.select :year, get_years_list, {}, {class: 'form-control'} %>
+      </div>
+    </div>
+
+    <div class="form-group <%= @film.errors[:slogan].empty? ? '' : 'has-error' %> ">
+      <%= f.label :slogan, :class => "control-label col-sm-1" %>
+      <div class="col-sm-4">
+        <%= f.text_field :slogan, :class => "form-control" %>
+        <span class="help-block">
+          <% @film.errors[:slogan].each do |err| %>
+            <%= err %>
+          <% end %>
+        </span>
+      </div>
+    </div>
+
+    <div class="form-group <%= @film.errors[:description].empty? ? '' : 'has-error' %> ">
+      <%= f.label :description, :class => "control-label col-sm-1" %>
+      <div class="col-sm-4">
+        <%= f.text_area :description, :class => "form-control" %>
+        <span class="help-block">
+          <% @film.errors[:description].each do |err| %>
+            <%= err %>
+          <% end %>
+        </span>
+      </div>
+    </div>
+
+
+    <p>
+      <%= f.submit %>
+    </p>
+
+<% end %>
