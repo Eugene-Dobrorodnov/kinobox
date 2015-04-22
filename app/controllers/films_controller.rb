@@ -1,7 +1,9 @@
 class FilmsController < ApplicationController
 
+  PER_PAGE = 5
+
   def index
-    @films = Film.all
+    @films = Film.all.paginate(page: params[:page], per_page: PER_PAGE)
   end
 
   def show
