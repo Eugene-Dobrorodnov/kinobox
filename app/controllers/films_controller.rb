@@ -3,6 +3,7 @@ class FilmsController < ApplicationController
   PER_PAGE = 5
 
   def index
+    puts current_user.films.count
     @films = Film.all.paginate(page: params[:page], per_page: PER_PAGE)
   end
 
