@@ -28,7 +28,6 @@ gem "twitter-bootstrap-rails"
 gem 'devise'
 gem 'will_paginate-bootstrap'
 gem 'activeadmin', github: 'gregbell/active_admin'
-gem 'cancancan'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
